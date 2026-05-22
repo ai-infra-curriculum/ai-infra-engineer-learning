@@ -1,0 +1,50 @@
+// markdownlint-cli2 config for curriculum content.
+//
+// Philosophy: lint catches *broken* markdown (empty links, malformed
+// syntax that makes the doc unrenderable) but does NOT enforce stylistic
+// preferences. The curriculum repos contain heterogeneous content from
+// multiple generators — strict style enforcement is hostile to the
+// content-not-style guardrail (see _meta/GUARDRAILS.md #16).
+//
+// Rule reference: https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+{
+  "default": true,
+
+  // === Disabled: style preferences ===
+  "MD001": false,  // heading-increment (h1 → h3 jumps are fine)
+  "MD007": false,  // ul-indent style
+  "MD009": false,  // trailing-spaces (innocuous)
+  "MD010": false,  // hard-tabs (occasional in code blocks)
+  "MD012": false,  // multiple-blanks (vertical breathing room is fine)
+  "MD013": false,  // line-length (lecture notes wrap as written)
+  "MD018": false,  // no-missing-space-atx
+  "MD019": false,  // no-multiple-space-atx
+  "MD022": false,  // blanks-around-headings
+  "MD024": false,  // duplicate-heading ("Exercise 1 ## Goal" repeats)
+  "MD025": false,  // multiple-h1 (quiz.md uses H1 per question)
+  "MD026": false,  // trailing-punctuation in headings
+  "MD028": false,  // no-blanks-blockquote
+  "MD029": false,  // ol-prefix style
+  "MD031": false,  // blanks-around-fences
+  "MD032": false,  // blanks-around-lists
+  "MD033": false,  // inline-html (needs-research markers, badges)
+  "MD034": false,  // bare-URL (emails get flagged)
+  "MD035": false,  // hr-style
+  "MD036": false,  // emphasis-as-heading (intentional in many docs)
+  "MD037": false,  // no-space-in-emphasis
+  "MD040": false,  // fenced-code-language (plain output blocks)
+  "MD041": false,  // first-line-h1
+  "MD046": false,  // code-block-style (fenced vs indented)
+  "MD047": false,  // single-trailing-newline
+  "MD050": false,  // strong-style (** vs __)
+  "MD051": false,  // link-fragments (deep anchors hard to verify)
+  "MD058": false,  // blanks-around-tables
+  "MD060": false   // table-pipe-spacing
+
+  // === Implicitly enabled (broken-markdown checks) ===
+  // MD042 (no-empty-links)
+  // MD038 (no-space-in-code-spans)
+  // MD039 (no-space-in-links)
+  // MD045 (no-alt-text)
+  // ...and the rest of the markdownlint rule set defaults.
+}

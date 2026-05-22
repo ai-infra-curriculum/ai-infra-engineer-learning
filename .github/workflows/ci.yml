@@ -1,0 +1,85 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main, development]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  markdown-lint:
+    name: Markdown lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DavidAnson/markdownlint-cli2-action@v16
+        with:
+          globs: |
+            modules/**/*.md
+            projects/**/*.md
+            lessons/**/*.md
+            !**/node_modules/**
+
+  python-syntax:
+    name: Python syntax (modules/)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - name: Compile every .py under modules/
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s globstar nullglob
+          files=( modules/**/*.py )
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No modules/**/*.py — nothing to check (placeholder repo state)."
+            exit 0
+          fi
+          fails=0
+          for f in "${files[@]}"; do
+            if ! python -m py_compile "$f"; then
+              echo "::error file=$f::SyntaxError"
+              fails=$((fails+1))
+            fi
+          done
+          echo "Compiled ${#files[@]} file(s); ${fails} failure(s)."
+          exit "$fails"
+
+  autograders:
+    name: Autograders must reject unfilled starters
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - name: Every check.py must FAIL on its unmodified starter
+        shell: bash {0}
+        run: |
+          set -uo pipefail
+          shopt -s globstar nullglob
+          checks=( modules/**/exercises/*/check.py )
+          if [ ${#checks[@]} -eq 0 ]; then
+            echo "No autograders found — nothing to verify (placeholder repo state)."
+            exit 0
+          fi
+          fails=0
+          for check in "${checks[@]}"; do
+            dir=$(dirname "$check")
+            rc=0
+            ( cd "$dir" && python check.py >/dev/null 2>&1 ) || rc=$?
+            if [ "$rc" -eq 0 ]; then
+              echo "::error file=$check::Autograder PASSED on unmodified starter; it must FAIL."
+              fails=$((fails+1))
+            else
+              echo "OK: ${check} correctly rejected unfilled starter (exit $rc)"
+            fi
+          done
+          echo "Verified ${#checks[@]} autograder(s); ${fails} false-pass(es)."
+          exit "$fails"
