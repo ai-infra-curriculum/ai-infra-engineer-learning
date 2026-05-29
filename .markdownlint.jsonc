@@ -32,6 +32,7 @@
   "MD035": false,  // hr-style
   "MD036": false,  // emphasis-as-heading (intentional in many docs)
   "MD037": false,  // no-space-in-emphasis
+  "MD038": false,  // no-space-in-code (cosmetic in code spans)
   "MD040": false,  // fenced-code-language (plain output blocks)
   "MD041": false,  // first-line-h1
   "MD046": false,  // code-block-style (fenced vs indented)
