@@ -566,3 +566,9 @@ This curriculum prepares you for **AI Infrastructure Engineer** roles. For caree
 **Happy Learning!** 🎓🚀
 
 </div>
+
+
+---
+
+<!-- aicg:maintained-by -->
+Maintained by [VeriSwarm.ai](https://veriswarm.ai)
