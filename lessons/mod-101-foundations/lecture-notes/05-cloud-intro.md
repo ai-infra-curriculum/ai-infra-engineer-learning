@@ -363,9 +363,9 @@ gcloud compute images list
 gcloud compute instances create ml-server \
   --zone=us-central1-a \
   --machine-type=e2-medium \
-  --image-family=ubuntu-2004-lts \
+  --image-family=ubuntu-2204-lts \
   --image-project=ubuntu-os-cloud \
-  --boot-disk-size=30GB \
+  --boot-disk-size=200GB \
   --tags=http-server,https-server
 
 # Allow firewall
