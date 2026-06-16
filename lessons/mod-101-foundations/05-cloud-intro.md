@@ -363,7 +363,7 @@ gcloud compute images list
 gcloud compute instances create ml-server \
   --zone=us-central1-a \
   --machine-type=e2-medium \
-  --image-family=ubuntu-2004-lts \
+  --image-family=ubuntu-2204-lts \
   --image-project=ubuntu-os-cloud \
   --boot-disk-size=30GB \
   --tags=http-server,https-server
@@ -554,7 +554,7 @@ gcloud compute instances create ml-trainer \
 gcloud compute instances create web-server \
   --zone=us-central1-a \
   --machine-type=e2-medium \
-  --image-family=ubuntu-2004-lts \
+  --image-family=ubuntu-2204-lts \
   --image-project=ubuntu-os-cloud \
   --tags=http-server
 
