@@ -675,27 +675,32 @@ pip install bert-score           # BERTScore
    - Frequency: Weekly
    - Topics: AI news, research, tutorials
 
-2. **Import AI**
+2. **AI Weekly**
+   - Link: https://aiweekly.co/
+   - Frequency: Three times weekly
+   - Topics: What AI experts are reading and sharing across models, agents, research, funding, and policy
+
+3. **Import AI**
    - Link: https://importai.substack.com/
    - Frequency: Weekly
    - Topics: AI research, papers, policy
 
-3. **TLDR AI**
+4. **TLDR AI**
    - Link: https://tldr.tech/ai
    - Frequency: Daily
    - Topics: AI news, quick updates
 
-4. **The Gradient**
+5. **The Gradient**
    - Link: https://thegradient.pub/
    - Frequency: Bi-weekly
    - Topics: Long-form AI articles
 
-5. **LangChain Newsletter**
+6. **LangChain Newsletter**
    - Link: https://blog.langchain.dev/
    - Frequency: Weekly
    - Topics: LangChain updates, RAG techniques
 
-6. **Superhuman AI**
+7. **Superhuman AI**
    - Link: https://www.superhuman.ai/
    - Frequency: Weekly
    - Topics: AI tools, productivity, LLMs
