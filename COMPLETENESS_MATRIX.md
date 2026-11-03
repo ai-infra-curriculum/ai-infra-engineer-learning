@@ -24,7 +24,7 @@ _Generated 2026-11-03 by `aicg org completeness`._
 | `mod-107-gpu-computing` | ✅ Complete | 46,437 | 8 | 11 | — | 11/11 |
 | `mod-108-monitoring-observability` | ✅ Complete | 40,036 | 8 | 10 | — | 10/10 |
 | `mod-109-infrastructure-as-code` | ✅ Complete | 54,128 | 8 | 13 | — | 13/13 |
-| `mod-110-llm-infrastructure` | ✅ Complete | 71,290 | 8 | 14 | — | 14/14 |
+| `mod-110-llm-infrastructure` | ✅ Complete | 71,317 | 8 | 14 | — | 14/14 |
 
 ## How this is calculated
 
