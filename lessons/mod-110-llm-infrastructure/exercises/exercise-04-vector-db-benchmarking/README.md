@@ -38,7 +38,7 @@ Index + benchmark + record.
 
 ### Step 3 — Weaviate (45 min)
 ```bash
-docker run -d -p 8080:8080 semitechnologies/weaviate:1.25.0
+docker run -d -p 8080:8080 semitechnologies/weaviate:1.39.13
 ```
 Same dataset; same queries.
 
