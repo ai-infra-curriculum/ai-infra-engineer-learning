@@ -24,7 +24,7 @@ pydantic==2.5.0           # Data validation using Python type hints
 
 # HTTP Client (for URL-based predictions)
 httpx==0.25.2             # Async HTTP client
-requests==2.31.0          # HTTP library for Python
+requests==2.33.0          # HTTP library for Python
 
 # ==============================================================================
 # Monitoring and Observability

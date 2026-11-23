@@ -61,7 +61,7 @@ sqlalchemy==2.0.23
 # HTTP and Async
 httpx==0.25.1
 aiohttp==3.9.0
-requests==2.31.0
+requests==2.33.0
 
 # Testing (for exercises)
 pytest==7.4.3
